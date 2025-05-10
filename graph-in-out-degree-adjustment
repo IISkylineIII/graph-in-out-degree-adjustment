@@ -1,0 +1,19 @@
+adjacency_list = {
+    1: [2, 3, 5],
+    2: [1, 4],
+    3: [2, 5],
+    4: [1, 2, 5],
+    5: [3]
+}
+
+in_degrees = {}
+out_degrees = {}
+
+for node, neighbors in adjacency_list.items():
+    out_degrees[node] = len(neighbors)
+    for neighbor in neighbors:
+        in_degrees[neighbor] = in_degrees.get(neighbor, 0) + 1
+
+min_edges_to_add = sum(abs(in_degrees.get(node, 0) - out_degrees.get(node, 0)) for node in set(in_degrees) | set(out_degrees))
+
+print(f"The minimum number of edges to add is: {min_edges_to_add}")
