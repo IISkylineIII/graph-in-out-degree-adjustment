@@ -35,23 +35,21 @@ for node, neighbors in adjacency_list.items():
 min_edges_to_add = sum(abs(in_degrees.get(node, 0) - out_degrees.get(node, 0)) for node in set(in_degrees) | set(out_degrees))
 
 print(f"The minimum number of edges to add is: {min_edges_to_add}")
+```
 
-Example Output
+### Example Output
 The minimum number of edges to add is: 2
 
-Requirements
+### Requirements
 Python 3.6 or higher
-
 No external libraries are required.
 
-Applications
+### Applications
 Graph theory and network analysis
-
 Balancing flow networks or data pipelines
-
 Solving optimization problems related to directed graphs
 
-License
+### License
 This project is released under the MIT License.
 
 
